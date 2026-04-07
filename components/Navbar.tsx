@@ -91,14 +91,14 @@ export function DanceNavbar() {
     >
       <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-between">
         
-        {/* LOGO */}
+        {/* Logo */}
         <Link href="#inicio" className="flex items-center h-full">
           <div
             className={`flex items-center transition-all duration-300
             ${scrolled ? "h-12 " : "h-28 md:h-36 mt-10 md:mt-18"}`}
           >
             <img
-              src="/logo.png"
+              src="/Logo.png"
               alt="Free Style Dance"
               className="h-full w-auto object-contain"
             />
