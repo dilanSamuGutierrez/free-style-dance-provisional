@@ -2,17 +2,17 @@ import Image from "next/image"
 
 const proofImages = [
   {
-    src: "https://images.unsplash.com/photo-1547153760-18fc86324498?w=400&h=400&fit=crop",
-    alt: "Grupo de baile urbano en acción",
+    src: "/dance_image/salsa_choke/SALSA_CHOKE_1.webp",
+    alt: "Grupo de baile contemporáneo en acción",
     category: "Jóvenes"
   },
   {
-    src: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=400&h=400&fit=crop",
+    src: "/dance_image/baile_social/BAILE_SOCIAL.webp",
     alt: "Niños aprendiendo a bailar",
     category: "Niños"
   },
   {
-    src: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=400&fit=crop",
+    src: "/dance_image/urbano/URBANO_2.webp",
     alt: "Clase de baile para adultos",
     category: "Adultos"
   },
@@ -25,6 +25,11 @@ const proofImages = [
     src: "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=400&h=400&fit=crop",
     alt: "Ensayo grupal de coreografía",
     category: "Ensayos"
+  },
+    {
+    src: "/dance_image/urbano/URBANO_1.webp",
+    alt: "Clase de baile para adultos",
+    category: "Adultos"
   },
 ]
 
