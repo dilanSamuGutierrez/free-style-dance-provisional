@@ -26,7 +26,7 @@ export function Footer() {
             <MapPin className="w-5 h-5 text-[#ec3236] mt-1" />
             <div>
               <p className="text-sm text-white/50">Ubicación</p>
-              <p className="text-white">Cali, barrio Ingenio 2</p>
+              <p className="text-white">Cali, Carrera 85A # 15-133 barrio Ingenio 2</p>
             </div>
           </div>
 
@@ -34,7 +34,7 @@ export function Footer() {
           <div className="flex gap-4 pt-4">
 
             <a
-              href="https://wa.me/573001234567"
+              href="https://wa.me/573175644737?text=Hola!%20Quiero%20información%20sobre%20clases"
               target="_blank"
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-[#ec3236] transition-all duration-300"
             >

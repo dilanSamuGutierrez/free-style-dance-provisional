@@ -66,9 +66,9 @@ export function DanceNavbar() {
   const menuItems: MenuItem[] = [
     { label: "Inicio", href: "/" },
     { label: "Lo que pasa cuando empiezas", href: "#lo-que-te-ofrecemos" },
-    { label: "Servicios", href: "#servicios" },
-    { label: "Preguntas", href: "#preguntas" },
-    { label: "Precios", href: "#precios" },
+    { label: "Servicios", href: "/servicios" },
+    { label: "Preguntas", href: "/servicios#preguntas" },
+    { label: "Precios", href: "/servicios#precios" },
   ];
 
   useEffect(() => {

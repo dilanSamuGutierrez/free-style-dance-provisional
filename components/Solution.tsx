@@ -110,17 +110,18 @@ export function SolutionSection({
           viewport={{ once: true }}
           className="relative flex justify-center md:justify-end"
         >
-          <div className="relative w-full max-w-175 md:max-w-200">
+          <div className="relative w-full max-w-165 md:max-w-190">
             
             {/* glow */}
             <div className="absolute inset-0 scale-110 blur-3xl opacity-30 bg-black/30 rounded-xl" />
 
-            <div className="relative aspect-4/5 md:aspect-5/6 w-full overflow-hidden rounded-xl">
+            <div className="relative w-full">
               <Image
                 src={imageSrc}
                 alt={imageAlt}
-                fill
-                className="object-cover"
+                width={800}
+                height={800}
+                className="w-full max-w-125 h-auto object-contain mx-auto -mt-12 mb-2"
                 priority
               />
             </div>

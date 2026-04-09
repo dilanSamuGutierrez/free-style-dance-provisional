@@ -187,7 +187,7 @@ export function DanceHero({
 
           <div className="w-full max-w-85 rounded-3xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
 
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[1.6rem]">
+            <div className="relative aspect-4/5 overflow-hidden rounded-[1.6rem]">
 
               {/* 🔥 SIN animación pesada */}
               <div
@@ -195,7 +195,7 @@ export function DanceHero({
                 style={{ backgroundImage: `url(${activeSlide.image})` }}
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/20 to-transparent" />
 
               {/* Nombre */}
               <div className="absolute top-4 left-4">

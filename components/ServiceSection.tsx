@@ -9,55 +9,55 @@ const services = [
   {
     title: "Danza Urbana",
     description: "Hip hop, breaking y estilos urbanos para liberar tu energía",
-    image: "https://images.unsplash.com/photo-1547153760-18fc86324498?w=600&h=400&fit=crop",
+    image: "/dance_image/urbano/URBANO_1.webp",
     slug: "danza-urbana"
   },
   {
     title: "K-Pop",
     description: "Aprende las coreografías de tus grupos favoritos de K-pop",
-    image: "https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=600&h=400&fit=crop",
+    image: "/dance_image/kpop/KPOP_2.webp",
     slug: "kpop"
   },
   {
     title: "Bachata",
     description: "Sensualidad y conexión en cada paso de este ritmo latino",
-    image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&h=400&fit=crop",
+    image: "/dance_image/bachata/BACHATA.webp",
     slug: "bachata"
   },
   {
     title: "Salsa Choke",
     description: "El ritmo más auténtico de Cali, con sabor y actitud",
-    image: "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=600&h=400&fit=crop",
+    image: "/dance_image/salsa_choke/SALSA_CHOKE_1.webp",
     slug: "salsa-choke"
   },
   {
     title: "Champeta",
     description: "Movimientos africanos y caribeños llenos de alegría",
-    image: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=600&h=400&fit=crop",
+    image: "/dance_image/champeta/CHAMPETA.webp",
     slug: "champeta"
   },
   {
     title: "Contemporáneo",
     description: "Expresión artística y técnica en movimientos fluidos",
-    image: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&h=400&fit=crop",
+    image: "/dance_image/contemporaneo/CONTEMPORANEO.webp",
     slug: "contemporaneo"
   },
   {
     title: "Latino",
     description: "Ritmos latinos para disfrutar y conectar con la música",
-    image: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&h=400&fit=crop",
+    image: "/dance_image/latino/LATINO.webp",
     slug: "latino"
   },
   {
     title: "Baile Social",
     description: "Aprende a bailar en pareja y disfruta en cualquier evento",
-    image: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&h=400&fit=crop",
+    image: "/dance_image/baile_social/BAILE_SOCIAL.webp",
     slug: "baile-social"
   },
   {
     title: "Gimnasia",
     description: "Fortalece tu cuerpo con movimiento, disciplina y técnica",
-    image: "https://images.unsplash.com/photo-1518834107812-67b0b7c58434?w=600&h=400&fit=crop",
+    image: "/dance_image/gimnasia/GIMNASIA.webp",
     slug: "gimnasia"
   },
 ]
@@ -119,7 +119,10 @@ export function ServicesSection() {
           {services.map((service, index) => (
             <motion.div key={index} variants={card}>
               <Link
-                href={`/servicios#${service.slug}`}
+                href={{
+                  pathname: "/servicios",
+                  hash: service.slug,
+                }}
                 className="group relative aspect-3/2 rounded-2xl overflow-hidden block"
               >
                 <Image
@@ -129,10 +132,10 @@ export function ServicesSection() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
-                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
 
                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                  <h3 className="text-2xl md:text-3xl tracking-wide text-white mb-2 flex items-center gap-2">
+                  <h3 className="text-2xl md:text-3xl text-white mb-2 flex items-center gap-2">
                     {service.title}
                     <ArrowRight className="w-5 h-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                   </h3>

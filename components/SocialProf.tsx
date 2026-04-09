@@ -17,12 +17,12 @@ const proofImages = [
     category: "Adultos"
   },
   {
-    src: "https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?w=400&h=400&fit=crop",
+    src: "/reconocimientos/1.webp",
     alt: "Presentación de baile en vivo",
     category: "Shows"
   },
   {
-    src: "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?w=400&h=400&fit=crop",
+    src: "/reconocimientos/2.webp",
     alt: "Ensayo grupal de coreografía",
     category: "Ensayos"
   },

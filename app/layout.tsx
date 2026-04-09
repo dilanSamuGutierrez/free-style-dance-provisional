@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Arvo } from "next/font/google";
 import "./globals.css";
-import { WhatsAppFloat } from "@/components/float-buttons/WhatsApp";
-import { ScrollToTop } from "@/components/float-buttons/ScrollTop";
+
 
 const arvo = Arvo({
   subsets: ["latin"],
@@ -62,8 +61,7 @@ export default function RootLayout({
     >
       <body className={`${arvo.className} min-h-full flex flex-col bg-black text-white`}>
         {children}
-        <WhatsAppFloat />
-        <ScrollToTop />
+
       </body>
     </html>
   );
