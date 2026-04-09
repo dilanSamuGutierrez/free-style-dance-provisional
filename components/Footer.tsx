@@ -43,7 +43,7 @@ export function Footer() {
             </a>
 
             <a
-              href="#"
+              href="https://www.instagram.com/freestyledance"
               target="_blank"
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-[#ec3236] transition-all duration-300"
             >
@@ -52,7 +52,7 @@ export function Footer() {
             </a>
 
             <a
-              href="#"
+              href="https://www.tiktok.com/@freestyledance09"
               target="_blank"
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 hover:bg-[#ec3236] transition-all duration-300"
             >

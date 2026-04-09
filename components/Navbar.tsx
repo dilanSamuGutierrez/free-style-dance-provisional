@@ -152,15 +152,15 @@ export function DanceNavbar() {
 
           {/* SOCIALS */}
           <div className="hidden md:flex items-center gap-2">
-            <SocialIconLink href="https://instagram.com" label="Instagram" scrolled={scrolled}>
+            <SocialIconLink href="https://www.instagram.com/freestyledance" label="Instagram" scrolled={scrolled}>
               <FontAwesomeIcon icon={faInstagram} className="h-5 w-5" />
             </SocialIconLink>
 
-            <SocialIconLink href="https://tiktok.com" label="TikTok" scrolled={scrolled}>
+            <SocialIconLink href="https://www.tiktok.com/@freestyledance09?lang=es" label="TikTok" scrolled={scrolled}>
               <FaTiktok className="h-4 w-4" />
             </SocialIconLink>
 
-            <SocialIconLink href="https://wa.me/573000000000" label="WhatsApp" scrolled={scrolled}>
+            <SocialIconLink href="https://wa.me/573175644737?text=Hola!%20Quiero%20información%20sobre%20clases" label="WhatsApp" scrolled={scrolled}>
               <FaWhatsapp className="h-4 w-4" />
             </SocialIconLink>
           </div>
