@@ -95,7 +95,7 @@ export function FinalCTA({ imageSrc }: FinalCTAProps) {
             viewport={{ once: true }}
             className="relative flex justify-center md:justify-end"
           >
-            <div className="relative w-full max-w-110 md:max-w-162.5">
+            <div className="relative w-full max-w-65 md:max-w-140.5">
               
               {/* glow */}
               <div className="absolute inset-0 scale-110 blur-3xl opacity-25 bg-[#ec3236]/30 rounded-xl" />

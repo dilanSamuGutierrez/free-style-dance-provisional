@@ -122,7 +122,7 @@ const services = [
     subtitle: "Fuerza y disciplina",
     description:
       "Fortalece tu cuerpo con técnica, disciplina y entrenamiento físico funcional.",
-    image: "/dance_image/gimnasia/GIMNASIA.webp",
+    image: "/dance_image/gimnasia/gim_2.webp",
     slug: "gimnasia",
     benefits: [
       "Fuerza física",

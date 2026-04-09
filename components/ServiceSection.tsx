@@ -27,7 +27,7 @@ const services = [
   {
     title: "Salsa Choke",
     description: "El ritmo más auténtico de Cali, con sabor y actitud",
-    image: "/dance_image/salsa_choke/SALSA_CHOKE_1.webp",
+    image: "/dance_image/salsa_choke/SALSA_CHOKE.webp",
     slug: "salsa-choke"
   },
   {
@@ -57,7 +57,7 @@ const services = [
   {
     title: "Gimnasia",
     description: "Fortalece tu cuerpo con movimiento, disciplina y técnica",
-    image: "/dance_image/gimnasia/GIMNASIA.webp",
+    image: "/dance_image/gimnasia/gim_1.webp",
     slug: "gimnasia"
   },
 ]
@@ -132,7 +132,7 @@ export function ServicesSection() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/30 to-transparent" />
 
                 <div className="absolute inset-0 p-6 flex flex-col justify-end">
                   <h3 className="text-2xl md:text-3xl text-white mb-2 flex items-center gap-2">

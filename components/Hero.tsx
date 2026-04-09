@@ -3,20 +3,8 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import { motion, Variants } from "framer-motion";
 
-type Slide = {
-  name: string;
-  image: string;
-  alt: string;
-};
-
-type DanceHeroProps = {
-  backgroundImages?: string[];
-  slides?: Slide[];
-};
-
-const defaultSlides: Slide[] = [
+const defaultSlides = [
   {
     name: "URBANO",
     image: "/dance_image/urbano/URBANO.webp",
@@ -47,7 +35,7 @@ const defaultSlides: Slide[] = [
     image: "/dance_image/latino/LATINO.webp",
     alt: "Pareja bailando latino",
   },
-    {
+  {
     name: "Baile Social",
     image: "/dance_image/baile_social/BAILE_SOCIAL_1.webp",
     alt: "Pareja bailando baile social",
@@ -69,7 +57,7 @@ const defaultBackgrounds = [
 export function DanceHero({
   backgroundImages = defaultBackgrounds,
   slides = defaultSlides,
-}: DanceHeroProps) {
+}) {
   const normalizedSlides = useMemo(
     () => (slides.length ? slides : defaultSlides),
     [slides]
@@ -77,21 +65,23 @@ export function DanceHero({
 
   const [current, setCurrent] = useState(0);
   const [bgIndex, setBgIndex] = useState(0);
+  const [loaded, setLoaded] = useState(false);
 
-  // 🔥 precarga imágenes (clave para que no parpadee)
+  // 🔥 Precarga optimizada (sin bloquear render)
   useEffect(() => {
-    normalizedSlides.forEach((s) => {
-      const img = new Image();
-      img.src = s.image;
-    });
+    const preload = (src: string) => {
+      const img = new window.Image();
+      img.src = src;
+    };
 
-    backgroundImages.forEach((bg) => {
-      const img = new Image();
-      img.src = bg;
+    requestIdleCallback(() => {
+      normalizedSlides.forEach((s) => preload(s.image));
+      backgroundImages.forEach((bg) => preload(bg));
+      setLoaded(true);
     });
   }, [normalizedSlides, backgroundImages]);
 
-  // slider pequeño
+  // 🔥 Slider pequeño
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % normalizedSlides.length);
@@ -99,73 +89,50 @@ export function DanceHero({
     return () => clearInterval(timer);
   }, [normalizedSlides.length]);
 
-  // slider fondo
+  // 🔥 Slider fondo
   useEffect(() => {
     const timer = setInterval(() => {
       setBgIndex((prev) => (prev + 1) % backgroundImages.length);
-    }, 8500);
+    }, 8000);
     return () => clearInterval(timer);
   }, [backgroundImages.length]);
 
   const activeSlide = normalizedSlides[current];
-
-  const textContainer: Variants = {
-    hidden: {},
-    show: { transition: { staggerChildren: 0.15 } },
-  };
-
-  const textItem: Variants = {
-    hidden: { opacity: 0, y: 30 },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-black">
 
       {/* BACKGROUND */}
       <div
-        className="absolute inset-0 bg-cover bg-center transition-all duration-1000"
-        style={{ backgroundImage: `url(${backgroundImages[bgIndex]})` }}
+        className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000"
+        style={{
+          backgroundImage: `url(${backgroundImages[bgIndex]})`,
+          opacity: loaded ? 1 : 0,
+        }}
       />
 
       {/* overlays */}
-      <div className="absolute inset-0 bg-black/50" />
-      <div className="absolute top-0 left-0 w-[50%] h-[50%] bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.25),transparent_70%)]" />
-      <div className="absolute inset-y-0 left-0 w-[45%] bg-linear-to-r from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-y-0 left-0 w-[45%] bg-linear-to-r from-black/90 to-transparent" />
 
       <div className="relative z-10 mx-auto grid min-h-screen w-full max-w-7xl grid-cols-1 items-center px-4 pt-28 md:px-8 lg:grid-cols-[1.05fr_0.95fr]">
 
         {/* LEFT */}
-        <motion.div
-          variants={textContainer}
-          initial="hidden"
-          animate="show"
-          className="flex items-center"
-        >
+        <div className="flex items-center">
           <div className="max-w-2xl px-6 md:px-10 lg:px-14 mt-20">
 
-            <motion.h1
-              variants={textItem}
-              className="text-4xl md:text-6xl xl:text-7xl text-white leading-[0.95]"
-            >
+            <h1 className="text-4xl md:text-6xl xl:text-7xl text-white leading-[0.95]">
               Academia de baile en Cali
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              variants={textItem}
-              className="mt-6 text-white/85 max-w-lg"
-            >
+            <p className="mt-6 text-white/85 max-w-lg">
               Si estás buscando clases de danza urbana en Cali, este es el lugar donde puedes empezar sin presión. No importa si nunca has bailado o si ya tienes experiencia.
-            </motion.p>
+            </p>
 
-            <motion.div variants={textItem} className="mt-8 flex gap-3">
+            <div className="mt-8 flex gap-3">
               <Link
                 href="#servicios"
-                className="bg-[#ec3236] px-6 py-3 rounded-full text-white flex items-center"
+                className="bg-[#ec3236] px-6 py-3 rounded-full text-white flex items-center hover:scale-105 transition"
               >
                 Ver servicios
                 <ChevronRight className="ml-2 h-4 w-4" />
@@ -173,14 +140,14 @@ export function DanceHero({
 
               <Link
                 href="#precios"
-                className="border border-white/30 px-6 py-3 rounded-full text-white"
+                className="border border-white/30 px-6 py-3 rounded-full text-white hover:bg-white/10 transition"
               >
                 Ver precios
               </Link>
-            </motion.div>
+            </div>
 
           </div>
-        </motion.div>
+        </div>
 
         {/* RIGHT CARD */}
         <div className="flex justify-center lg:justify-end mt-10">
@@ -189,13 +156,13 @@ export function DanceHero({
 
             <div className="relative aspect-4/5 overflow-hidden rounded-[1.6rem]">
 
-              {/* 🔥 SIN animación pesada */}
+              {/* Imagen */}
               <div
-                className="absolute inset-0 bg-cover bg-center transition-opacity duration-300"
+                className="absolute inset-0 bg-cover bg-center transition-opacity duration-500"
                 style={{ backgroundImage: `url(${activeSlide.image})` }}
               />
 
-              <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent" />
 
               {/* Nombre */}
               <div className="absolute top-4 left-4">
@@ -204,7 +171,7 @@ export function DanceHero({
                 </span>
               </div>
 
-              {/* Punticos */}
+              {/* Indicadores */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                 {normalizedSlides.map((_, index) => (
                   <button
