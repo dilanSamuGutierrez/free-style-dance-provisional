@@ -63,16 +63,16 @@ export function Footer() {
           </div>
         </div>
 
-        {/* DERECHA (MAPA MÁS PRO) */}
-        <div className="relative w-full h-80 rounded-2xl overflow-hidden">
+       {/* DERECHA (MAPA MÁS PRO) */}
+        <div className="relative w-full max-w-full overflow-hidden">
           
           {/* glow */}
-          <div className="absolute inset-0 bg-[#ec3236]/10 blur-2xl scale-110 opacity-30" />
+          <div className="absolute inset-0 bg-[#ec3236]/10 blur-2xl scale-110 opacity-30 pointer-events-none" />
 
-          <div className="relative w-full h-full rounded-2xl overflow-hidden border border-white/10">
+          <div className="relative w-full aspect-16/12 sm:aspect-16/10 md:aspect-video rounded-2xl overflow-hidden border border-white/10">
             <iframe
               src="https://www.google.com/maps?output=embed&q=FREE+STYLE+DANCE+ESCUELA+DE+BAILE+Cali"
-              className="w-full h-full border-0 grayscale hover:grayscale-0 transition duration-500"
+              className="w-full h-full border-0"
               loading="lazy"
             />
           </div>

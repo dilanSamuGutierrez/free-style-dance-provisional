@@ -131,18 +131,11 @@ export function DanceHero({
 
             <div className="mt-8 flex gap-3">
               <Link
-                href="#servicios"
+                href="/servicios"
                 className="bg-[#ec3236] px-6 py-3 rounded-full text-white flex items-center hover:scale-105 transition"
               >
                 Ver servicios
                 <ChevronRight className="ml-2 h-4 w-4" />
-              </Link>
-
-              <Link
-                href="#precios"
-                className="border border-white/30 px-6 py-3 rounded-full text-white hover:bg-white/10 transition"
-              >
-                Ver precios
               </Link>
             </div>
 

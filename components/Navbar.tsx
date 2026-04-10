@@ -68,7 +68,6 @@ export function DanceNavbar() {
     { label: "Lo que pasa cuando empiezas", href: "#lo-que-te-ofrecemos" },
     { label: "Servicios", href: "/servicios" },
     { label: "Preguntas", href: "/servicios#preguntas" },
-    { label: "Precios", href: "/servicios#precios" },
   ];
 
   useEffect(() => {
